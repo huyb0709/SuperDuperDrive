@@ -28,9 +28,10 @@ public class FileController {
     public String uploadFile(Authentication authentication, @RequestParam("fileUpload") MultipartFile fileUpload, Model model) throws IOException {
         String username = (String) authentication.getName();
         try {
-            if((fileUpload.getSize() >= 1048576)) {
-                model.addAttribute("resultError", "Sorry! the file that you upload is over size. Please upload file < 1MB");
-            }
+            //-- Disable limit size of file upload, setting at application.properties
+//            if((fileUpload.getSize() >= 5000000)) {
+//                model.addAttribute("overSize", "Sorry! the file that you upload is over size. Please upload file < 5MB");
+//            }
             fileService.insertFile(fileUpload, username, model);
         } catch (Exception e){
             System.out.println(e.getMessage());

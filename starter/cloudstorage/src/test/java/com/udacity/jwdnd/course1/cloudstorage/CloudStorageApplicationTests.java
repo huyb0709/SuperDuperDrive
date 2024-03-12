@@ -152,16 +152,16 @@ class CloudStorageApplicationTests {
 	 * Read more about custom error pages at: 
 	 * https://attacomsian.com/blog/spring-boot-custom-error-page#displaying-custom-error-page
 	 */
-//	@Test
-//	public void testBadUrl() {
-//		// Create a test account
-//		doMockSignUp("URL","Test","UT","123");
-//		doLogIn("UT", "123");
-//
-//		// Try to access a random made-up URL.
-//		driver.get("http://localhost:" + this.port + "/some-random-page");
-//        Assertions.assertFalse(driver.getPageSource().contains("Whitelabel Error Page"));
-//	}
+	@Test
+	public void testBadUrl() {
+		// Create a test account
+		doMockSignUp("URL","Test","UT","123");
+		doLogIn("UT", "123");
+
+		// Try to access a random made-up URL.
+		driver.get("http://localhost:" + this.port + "/some-random-page");
+        Assertions.assertFalse(driver.getPageSource().contains("Whitelabel Error Page"));
+	}
 
 
 	/**
